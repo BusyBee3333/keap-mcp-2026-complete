@@ -1,46 +1,39 @@
 {
-  "name": "keap-mcp-server",
+  "name": "@mcpengine/keap",
   "version": "1.0.0",
-  "description": "MCP server for Keap API - 2026 Complete Version",
-  "type": "module",
-  "main": "dist/index.js",
-  "author": "MCPEngage <hello@mcpengage.com>",
+  "description": "MCP server for Keap (Infusionsoft) - Comprehensive contact, sales, marketing, and e-commerce automation platform",
+  "author": "MCPEngine",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/BusyBee3333/Keap-MCP-2026-Complete.git"
+  "type": "module",
+  "bin": {
+    "keap-mcp": "./dist/main.js"
+  },
+  "scripts": {
+    "build": "tsc && npm run build:apps",
+    "build:apps": "cd src/ui/react-app && npm run build",
+    "dev": "tsx src/main.ts",
+    "prepublishOnly": "npm run build",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "axios": "^1.7.0",
+    "dotenv": "^16.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.6.0"
   },
   "keywords": [
     "mcp",
     "keap",
-    "keap",
-    "api",
-    "ai"
-  ],
-  "scripts": {
-    "build": "tsc",
-    "start": "node dist/index.js",
-    "dev": "tsx src/index.ts",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
-    "clean": "rm -rf dist",
-    "rebuild": "npm run clean && npm run build"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^0.5.0",
-    "zod": "^3.22.4",
-    "dotenv": "^16.3.1"
-  },
-  "devDependencies": {
-    "@types/node": "^20.10.0",
-    "@types/jest": "^29.5.0",
-    "jest": "^29.5.0",
-    "ts-jest": "^29.1.0",
-    "tsx": "^4.7.0",
-    "typescript": "^5.3.0"
-  },
-  "engines": {
-    "node": ">=18.0.0"
-  }
+    "infusionsoft",
+    "crm",
+    "marketing-automation",
+    "sales-pipeline",
+    "e-commerce",
+    "model-context-protocol"
+  ]
 }
